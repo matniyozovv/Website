@@ -1,26 +1,24 @@
 // Ma'lumotlar bazasi
         const subjects = [
-            { id: 1, name: "Matematika", icon: "fas fa-calculator", price: "25,000", period: "soatiga", desc: "Algebra, geometriya, hisoblash" },
-            { id: 2, name: "Fizika", icon: "fas fa-atom", price: "30,000", period: "soatiga", desc: "Mexanika, termodinamika, elektromagnetizm" },
-            { id: 3, name: "Kimyo", icon: "fas fa-vial", price: "28,000", period: "soatiga", desc: "Organik, noorganik, fizik kimyo" },
-            { id: 4, name: "Ingliz tili", icon: "fas fa-language", price: "20,000", period: "soatiga", desc: "Grammatika, nutq, yozuv" },
-            { id: 5, name: "Dasturlash", icon: "fas fa-code", price: "35,000", period: "soatiga", desc: "JavaScript, Python, Web dasturlash" },
-            { id: 6, name: "Biologiya", icon: "fas fa-dna", price: "26,000", period: "soatiga", desc: "Anatomiya, genetika, ekologiya" },
-            { id: 7, name: "Tarix", icon: "fas fa-landmark", price: "22,000", period: "soatiga", desc: "Jahon tarixi, O'zbekiston tarixi" },
-            { id: 8, name: "Iqtisod", icon: "fas fa-chart-line", price: "27,000", period: "soatiga", desc: "Mikroiqtisod, makroiqtisod" },
-            { id: 9, name: "Rus tili", icon: "fas fa-book", price: "18,000", period: "soatiga", desc: "Grammatika, nutq, yozuv" },
-            { id: 10, name: "Geografiya", icon: "fas fa-globe-asia", price: "23,000", period: "soatiga", desc: "Fizik geografiya, iqtisodiy geografiya" }
+            { id: 1, name: "Matematika", icon: "fas fa-calculator", price: "300,000", period: "to'lov", desc: "Algebra, geometriya, hisoblash" },
+            { id: 2, name: "Fizika", icon: "fas fa-atom", price: "350,000", period: "to'lov", desc: "Mexanika, termodinamika, elektromagnetizm" },
+            { id: 3, name: "Kimyo", icon: "fas fa-vial", price: "400,000", period: "to'lov", desc: "Organik, noorganik, fizik kimyo" },
+            { id: 4, name: "Ingliz tili", icon: "fas fa-language", price: "400,000", period: "to'lov", desc: "Grammatika, nutq, yozuv" },
+            { id: 5, name: "Dasturlash", icon: "fas fa-code", price: "700,000", period: "to'lov", desc: "JavaScript, Python, Web dasturlash" },
+            { id: 6, name: "Biologiya", icon: "fas fa-dna", price: "400,000", period: "to'lov", desc: "Anatomiya, genetika, ekologiya" },
+            { id: 7, name: "Tarix", icon: "fas fa-landmark", price: "200,000", period: "to'lov", desc: "Jahon tarixi, O'zbekiston tarixi" },
+            { id: 9, name: "Rus tili", icon: "fas fa-book", price: "100,000", period: "to'lov", desc: "Grammatika, nutq, yozuv" }
         ];
 
         const tutors = [
-            { id: 1, name: "Azizbek Ismoilov", subject: "Matematika", rating: 4.9, price: "25,000", exp: "5 yil", desc: "Matematikadan oliy ma'lumotli repetitor", telegram: "@azizbek_math", img: "https://randomuser.me/api/portraits/men/32.jpg" },
-            { id: 2, name: "Sevara Karimova", subject: "Ingliz tili", rating: 4.8, price: "20,000", exp: "7 yil", desc: "IELTS 8.5 sohibasi, tajribali o'qituvchi", telegram: "@sevara_english", img: "https://randomuser.me/api/portraits/women/44.jpg" },
-            { id: 3, name: "Javohir Rustamov", subject: "Dasturlash", rating: 4.9, price: "35,000", exp: "6 yil", desc: "Senior dasturchi, 10+ loyiha tajribasi", telegram: "@javohir_dev", img: "https://randomuser.me/api/portraits/men/67.jpg" },
-            { id: 4, name: "Dilnoza Xolmirzayeva", subject: "Fizika", rating: 4.7, price: "30,000", exp: "4 yil", desc: "Fizika fanlari nomzodi, universitet o'qituvchisi", telegram: "@dilnoza_physics", img: "https://randomuser.me/api/portraits/women/68.jpg" },
-            { id: 5, name: "Farhod Abdullayev", subject: "Kimyo", rating: 4.8, price: "28,000", exp: "8 yil", desc: "Kimyo fanlari doktori, 100+ o'quvchi", telegram: "@farhod_chemistry", img: "https://randomuser.me/api/portraits/men/75.jpg" },
-            { id: 6, name: "Madina Yusupova", subject: "Biologiya", rating: 4.6, price: "26,000", exp: "5 yil", desc: "Tibbiyot universiteti o'qituvchisi", telegram: "@madina_biology", img: "https://randomuser.me/api/portraits/women/26.jpg" },
-            { id: 7, name: "Bekzod Xo'jayev", subject: "Tarix", rating: 4.5, price: "22,000", exp: "10 yil", desc: "Tarix fanlari doktori, 3 ta kitob muallifi", telegram: "@bekzod_history", img: "https://randomuser.me/api/portraits/men/55.jpg" },
-            { id: 8, name: "Zarina Qodirova", subject: "Rus tili", rating: 4.7, price: "18,000", exp: "6 yil", desc: "Rus tili mutaxassisi, tarjimon", telegram: "@zarina_russian", img: "https://randomuser.me/api/portraits/women/33.jpg" }
+            { id: 1, name: "Azizbek Ismoilov", subject: "Matematika", rating: 4.9, price: "300,000", exp: "5 yil", desc: "Matematikadan oliy ma'lumotli ", telegram: "@azizbek_math", img: "https://randomuser.me/api/portraits/men/32.jpg" },
+            { id: 2, name: "Sevara Karimova", subject: "Ingliz tili", rating: 4.8, price: "400,000", exp: "7 yil", desc: "IELTS 8.5 sohibasi, tajribali o'qituvchi", telegram: "@sevara_english", img: "https://randomuser.me/api/portraits/women/44.jpg" },
+            { id: 3, name: "Javohir Rustamov", subject: "Dasturlash", rating: 4.9, price: "700,000", exp: "6 yil", desc: "Senior dasturchi, 10+ loyiha tajribasi", telegram: "@javohir_dev", img: "https://randomuser.me/api/portraits/men/67.jpg" },
+            { id: 4, name: "Dilnoza Xolmirzayeva", subject: "Fizika", rating: 4.7, price: "350,000", exp: "4 yil", desc: "Fizika Fani ustozi, universitet o'qituvchisi", telegram: "@dilnoza_physics", img: "https://randomuser.me/api/portraits/women/68.jpg" },
+            { id: 5, name: "Farhod Abdullayev", subject: "Kimyo", rating: 4.8, price: "400,000", exp: "8 yil", desc: "Kimyo fanlari doktori, 100+ o'quvchi", telegram: "@farhod_chemistry", img: "https://randomuser.me/api/portraits/men/75.jpg" },
+            { id: 6, name: "Madina Yusupova", subject: "Biologiya", rating: 4.6, price: "400,000", exp: "5 yil", desc: "Tibbiyot universiteti o'qituvchisi", telegram: "@madina_biology", img: "https://randomuser.me/api/portraits/women/26.jpg"   },
+            { id: 7, name: "Bekzod Xo'jayev", subject: "Tarix", rating: 4.5, price: "200,000", exp: "10 yil", desc: "Tarix fani ustoz, 3 ta kitob muallifi", telegram: "@bekzod_history", img: "https://randomuser.me/api/portraits/men/55.jpg" },
+            { id: 8, name: "Zarina Qodirova", subject: "Rus tili", rating: 4.7, price: "100,000", exp: "6 yil", desc: "Rus tili mutaxassisi, tarjimon", telegram: "@zarina_russian", img: "https://randomuser.me/api/portraits/women/33.jpg" }
         ];
 
         // DOM elementlari
