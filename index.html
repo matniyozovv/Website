@@ -6,7 +6,6 @@
     <title>StudyPro - Repetitorlar Platformasi</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
     <!-- Header -->
@@ -35,8 +34,6 @@
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
-
-
         </div>
     </header>
 
@@ -95,7 +92,7 @@
                         <a href="#" class="forgot-password">Parolni unutdingizmi?</a>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-block" style="width: 100%;">Kirish</button>
+                    <button type="submit" class="btn btn-primary btn-block">Kirish</button>
 
                     <div class="social-auth">
                         <p>Yoki ijtimoiy tarmoqlar orqali</p>
@@ -145,7 +142,7 @@
                         <label for="acceptTerms">Men <a href="#" class="text-primary">foydalanish shartlari</a> bilan tanishdim va rozi bo'ldim</label>
                     </div>
 
-                    <button type="submit" class="btn btn-accent btn-block" style="width: 100%;">Ro'yxatdan o'tish</button>
+                    <button type="submit" class="btn btn-accent btn-block">Ro'yxatdan o'tish</button>
                 </form>
             </div>
         </div>
@@ -188,7 +185,7 @@
                 <select class="search-select">
                     <option value="">Barcha shaharlar</option>
                     <option value="tashkent">Toshkent</option>
-                    <option value="samarkand">Xiva</option>
+                    <option value="samarkand">Samarqand</option>
                     <option value="online">Online</option>
                 </select>
                 <select class="search-select">
@@ -285,8 +282,113 @@
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-block" style="width: 100%;">Bron qilish</button>
+                <button type="submit" class="btn btn-primary btn-block">Bron qilish</button>
             </form>
+        </div>
+    </div>
+
+    <!-- User Profile Modal -->
+    <div class="user-modal" id="userModal">
+        <div class="user-modal-content">
+            <span class="close-user-modal" id="closeUserModal">&times;</span>
+
+            <div class="user-modal-header">
+                <div class="user-modal-avatar">
+                    <span id="userModalAvatar">M</span>
+                </div>
+                <div class="user-header-info">
+                    <h3 id="userModalName">Matniyozv Mansurbek</h3>
+                    <div class="user-modal-status">
+                        <span class="status-indicator active"></span>
+                        <span class="status-text">Faol</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-modal-body">
+                <div class="user-info-grid">
+                    <div class="info-grid-item">
+                        <div class="info-icon-small">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content-small">
+                            <div class="info-label-small">Email</div>
+                            <div class="info-value-small" id="userModalEmail">mm@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <div class="info-grid-item">
+                        <div class="info-icon-small">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content-small">
+                            <div class="info-label-small">Telefon</div>
+                            <div class="info-value-small" id="userModalPhone">+998901234567</div>
+                        </div>
+                    </div>
+
+                    <div class="info-grid-item">
+                        <div class="info-icon-small">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="info-content-small">
+                            <div class="info-label-small">Ro'yxatdan</div>
+                            <div class="info-value-small" id="userModalDate">1 Fev, 2026</div>
+                        </div>
+                    </div>
+
+                    <div class="info-grid-item">
+                        <div class="info-icon-small">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="info-content-small">
+                            <div class="info-label-small">Darslar</div>
+                            <div class="info-value-small">12 ta</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-stats-compact">
+                    <div class="stat-compact">
+                        <div class="stat-icon-compact" style="background: rgba(52, 152, 219, 0.1);">
+                            <i class="fas fa-star" style="color: #3498db;"></i>
+                        </div>
+                        <div class="stat-info-compact">
+                            <div class="stat-number-compact">4.8</div>
+                            <div class="stat-label-compact">Reyting</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-compact">
+                        <div class="stat-icon-compact" style="background: rgba(46, 204, 113, 0.1);">
+                            <i class="fas fa-check-circle" style="color: #2ecc71;"></i>
+                        </div>
+                        <div class="stat-info-compact">
+                            <div class="stat-number-compact">89%</div>
+                            <div class="stat-label-compact">Muvaffaq</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-compact">
+                        <div class="stat-icon-compact" style="background: rgba(155, 89, 182, 0.1);">
+                            <i class="fas fa-clock" style="color: #9b59b6;"></i>
+                        </div>
+                        <div class="stat-info-compact">
+                            <div class="stat-number-compact">48</div>
+                            <div class="stat-label-compact">Soat</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-modal-footer">
+                <button class="btn btn-outline btn-small" id="editProfileBtn">
+                    <i class="fas fa-edit"></i> Tahrirlash
+                </button>
+                <button class="btn btn-danger btn-small" id="logoutFromModalBtn">
+                    <i class="fas fa-sign-out-alt"></i> Chiqish
+                </button>
+            </div>
         </div>
     </div>
 
@@ -316,7 +418,6 @@
                                  Xiva shahar, IT Park
                             </a>
                         </li>
-
                     </ul>
                 </div>
 
@@ -328,7 +429,6 @@
                         <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Narxlar</a></li>
                     </ul>
                 </div>
-
             </div>
 
             <div class="copyright">
