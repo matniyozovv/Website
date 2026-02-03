@@ -11,7 +11,7 @@ const subjects = [
 ];
 
 const tutors = [
-    { id: 1, name: "Azizbek Ismoilov", subject: "Matematika", rating: 4.9, price: "300,000", exp: "5 yil", desc: "Matematikadan oliy ma'lumotli ", telegram: "@azizbek_math", img: "https://randomuser.me/api/portraits/men/32.jpg" },
+    { id: 1, name: "Azizbek Ismoilov", subject: "Matematika", rating: 4.9, price: "300,000", exp: "5 yil", desc: "Matematikadan oliy ma'lumotli", telegram: "@azizbek_math", img: "https://randomuser.me/api/portraits/men/32.jpg" },
     { id: 2, name: "Sevara Karimova", subject: "Ingliz tili", rating: 4.8, price: "400,000", exp: "7 yil", desc: "IELTS 8.5 sohibasi, tajribali o'qituvchi", telegram: "@sevara_english", img: "https://randomuser.me/api/portraits/women/44.jpg" },
     { id: 3, name: "Javohir Rustamov", subject: "Dasturlash", rating: 4.9, price: "700,000", exp: "6 yil", desc: "Senior dasturchi, 10+ loyiha tajribasi", telegram: "@javohir_dev", img: "https://randomuser.me/api/portraits/men/67.jpg" },
     { id: 4, name: "Dilnoza Xolmirzayeva", subject: "Fizika", rating: 4.7, price: "350,000", exp: "4 yil", desc: "Fizika Fani ustozi, universitet o'qituvchisi", telegram: "@dilnoza_physics", img: "https://randomuser.me/api/portraits/women/68.jpg" },
@@ -207,7 +207,7 @@ function loadSubjects() {
     });
 }
 
-// Repetitorlarni chiqarish
+// Repetitorlarni chiqarish - YANGI DIZAYN
 function loadTutors() {
     tutorsGrid.innerHTML = '';
 
@@ -215,43 +215,56 @@ function loadTutors() {
         const card = document.createElement('div');
         card.className = 'tutor-card fade-in';
         card.innerHTML = `
-            <div class="tutor-header">
-                <div class="tutor-avatar">
-                    <img src="${tutor.img}" alt="${tutor.name}">
+            <div class="tutor-card-new">
+                <div class="tutor-card-header">
+                    <div class="tutor-header-left">
+                        <div class="tutor-avatar-new">
+                            <img src="${tutor.img}" alt="${tutor.name}">
+                        </div>
+                        <div class="tutor-basic-info">
+                            <h3 class="tutor-name-new">${tutor.name}</h3>
+                            <div class="tutor-subject-new">${tutor.subject}</div>
+                            <div class="tutor-rating-new">
+                                <div class="stars">
+                                    ${'<i class="fas fa-star"></i>'.repeat(5)}
+                                    <div class="stars-fill" style="width: ${tutor.rating * 20}%">
+                                        ${'<i class="fas fa-star"></i>'.repeat(5)}
+                                    </div>
+                                </div>
+                                <span class="rating-number">${tutor.rating}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="tutor-name">${tutor.name}</h3>
-                <div class="tutor-subject">${tutor.subject}</div>
-                <div class="tutor-rating">
-                    ${'<i class="fas fa-star"></i>'.repeat(Math.floor(tutor.rating))}
-                    <span>${tutor.rating}/5</span>
-                </div>
-            </div>
-            <div class="tutor-body">
-                <div class="tutor-info">
-                    <div class="info-item">
+
+                <div class="tutor-card-body">
+                    <div class="tutor-info-item">
                         <i class="fas fa-briefcase"></i>
-                        <span>Tajriba: ${tutor.exp}</span>
+                        <span class="info-text"><strong>Tajriba:</strong> ${tutor.exp}</span>
                     </div>
-                    <div class="info-item">
+                    <div class="tutor-info-item">
                         <i class="fas fa-graduation-cap"></i>
-                        <span>${tutor.desc}</span>
+                        <span class="info-text">${tutor.desc}</span>
                     </div>
-                    <div class="info-item">
+                    <div class="tutor-info-item">
                         <i class="fab fa-telegram"></i>
-                        <span>Telegram: ${tutor.telegram}</span>
+                        <span class="info-text"><strong>Telegram:</strong> ${tutor.telegram}</span>
                     </div>
                 </div>
-                <div class="tutor-price">
-                    <div class="price-amount">${tutor.price} UZS</div>
-                    <div class="price-period">soatiga</div>
-                </div>
-                <div class="tutor-actions">
-                    <button class="btn btn-outline telegram-btn" data-telegram="${tutor.telegram}">
-                        <i class="fab fa-telegram"></i> Telegram
-                    </button>
-                    <button class="btn btn-primary book-btn" data-tutor-id="${tutor.id}">
-                        <i class="fas fa-calendar-plus"></i> Bron qilish
-                    </button>
+
+                <div class="tutor-card-footer">
+                    <div class="tutor-price-new">
+                        <div class="price-amount-new">${tutor.price} UZS</div>
+                        <div class="price-period-new">soatiga</div>
+                    </div>
+                    <div class="tutor-actions-new">
+                        <button class="btn btn-telegram" data-telegram="${tutor.telegram}">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </button>
+                        <button class="btn btn-book" data-tutor-id="${tutor.id}">
+                            <i class="fas fa-calendar-plus"></i> Bron qilish
+                        </button>
+                    </div>
                 </div>
             </div>
         `;
@@ -260,7 +273,7 @@ function loadTutors() {
     });
 
     // Telegram tugmalariga event listener qo'shish
-    document.querySelectorAll('.telegram-btn').forEach(btn => {
+    document.querySelectorAll('.btn-telegram').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.stopPropagation();
             const telegram = this.getAttribute('data-telegram');
@@ -269,7 +282,7 @@ function loadTutors() {
     });
 
     // Bron qilish tugmalariga event listener qo'shish
-    document.querySelectorAll('.book-btn').forEach(btn => {
+    document.querySelectorAll('.btn-book').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.stopPropagation();
             if (!currentUser) {
@@ -354,12 +367,228 @@ function populateFormSelects() {
     });
 }
 
+// Search funksiyasi
+function setupSearch() {
+    const searchInput = document.querySelector('.search-input');
+    const citySelect = document.querySelectorAll('.search-select')[0];
+    const priceSelect = document.querySelectorAll('.search-select')[1];
+    const searchButton = document.querySelector('.search-section .btn-primary');
+
+    // Qidiruv tugmasi bosilganda
+    searchButton.addEventListener('click', performSearch);
+
+    // Enter tugmasi bosilganda
+    searchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+
+    // Select'larda o'zgarish bo'lsa
+    citySelect.addEventListener('change', performSearch);
+    priceSelect.addEventListener('change', performSearch);
+
+    function performSearch() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const selectedCity = citySelect.value;
+        const selectedPrice = priceSelect.value;
+
+        // Fanlarni filtrlash
+        let filteredSubjects = subjects;
+
+        if (searchTerm) {
+            filteredSubjects = filteredSubjects.filter(subject =>
+                subject.name.toLowerCase().includes(searchTerm) ||
+                subject.desc.toLowerCase().includes(searchTerm)
+            );
+        }
+
+        // Repetitorlarni filtrlash
+        let filteredTutors = tutors;
+
+        if (searchTerm) {
+            filteredTutors = filteredTutors.filter(tutor =>
+                tutor.name.toLowerCase().includes(searchTerm) ||
+                tutor.subject.toLowerCase().includes(searchTerm) ||
+                tutor.desc.toLowerCase().includes(searchTerm)
+            );
+        }
+
+        if (selectedCity) {
+            filteredTutors = filteredTutors.filter(tutor => {
+                if (selectedCity === 'online') {
+                    return true; // Online uchun hamma repetitor
+                }
+                return true; // Shaharga qarab filtr keyinroq qo'shiladi
+            });
+        }
+
+        if (selectedPrice) {
+            filteredTutors = filteredTutors.filter(tutor => {
+                const priceNum = parseInt(tutor.price.replace(/[^0-9]/g, ''));
+                switch (selectedPrice) {
+                    case 'cheap':
+                        return priceNum <= 50000;
+                    case 'medium':
+                        return priceNum >= 100000 && priceNum <= 150000;
+                    case 'expensive':
+                        return priceNum >= 250000;
+                    default:
+                        return true;
+                }
+            });
+        }
+
+        // Filtrlangan ma'lumotlarni chiqarish
+        displayFilteredResults(filteredSubjects, filteredTutors);
+    }
+
+    function displayFilteredResults(filteredSubjects, filteredTutors) {
+        // Fanlarni yangilash
+        subjectsGrid.innerHTML = '';
+
+        if (filteredSubjects.length === 0) {
+            subjectsGrid.innerHTML = `
+                <div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 60px;">
+                    <i class="fas fa-search" style="font-size: 48px; color: #bdc3c7; margin-bottom: 20px;"></i>
+                    <h3 style="color: #7f8c8d; margin-bottom: 10px;">Hech narsa topilmadi</h3>
+                    <p style="color: #95a5a6;">Sizning qidiruv so'rovingizga mos keladigan fan topilmadi</p>
+                </div>
+            `;
+        } else {
+            filteredSubjects.forEach(subject => {
+                const card = document.createElement('div');
+                card.className = 'subject-card fade-in';
+                card.innerHTML = `
+                    <div class="subject-icon">
+                        <i class="${subject.icon}"></i>
+                    </div>
+                    <h3 class="subject-title">${subject.name}</h3>
+                    <p class="subject-desc">${subject.desc}</p>
+                    <div class="subject-price">${subject.price} UZS</div>
+                    <div class="subject-period">${subject.period}</div>
+                `;
+
+                card.addEventListener('click', () => {
+                    openBookingModal();
+                    document.getElementById('bookingSubject').value = subject.name;
+                });
+
+                subjectsGrid.appendChild(card);
+            });
+        }
+
+        // Repetitorlarni yangilash - YANGI DIZAYN
+        tutorsGrid.innerHTML = '';
+
+        if (filteredTutors.length === 0) {
+            tutorsGrid.innerHTML = `
+                <div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 60px;">
+                    <i class="fas fa-user-graduate" style="font-size: 48px; color: #bdc3c7; margin-bottom: 20px;"></i>
+                    <h3 style="color: #7f8c8d; margin-bottom: 10px;">Repetitor topilmadi</h3>
+                    <p style="color: #95a5a6;">Sizning qidiruv so'rovingizga mos keladigan repetitor topilmadi</p>
+                </div>
+            `;
+        } else {
+            filteredTutors.forEach(tutor => {
+                const card = document.createElement('div');
+                card.className = 'tutor-card fade-in';
+                card.innerHTML = `
+                    <div class="tutor-card-new">
+                        <div class="tutor-card-header">
+                            <div class="tutor-header-left">
+                                <div class="tutor-avatar-new">
+                                    <img src="${tutor.img}" alt="${tutor.name}">
+                                </div>
+                                <div class="tutor-basic-info">
+                                    <h3 class="tutor-name-new">${tutor.name}</h3>
+                                    <div class="tutor-subject-new">${tutor.subject}</div>
+                                    <div class="tutor-rating-new">
+                                        <div class="stars">
+                                            ${'<i class="fas fa-star"></i>'.repeat(5)}
+                                            <div class="stars-fill" style="width: ${tutor.rating * 20}%">
+                                                ${'<i class="fas fa-star"></i>'.repeat(5)}
+                                            </div>
+                                        </div>
+                                        <span class="rating-number">${tutor.rating}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tutor-card-body">
+                            <div class="tutor-info-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span class="info-text"><strong>Tajriba:</strong> ${tutor.exp}</span>
+                            </div>
+                            <div class="tutor-info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span class="info-text">${tutor.desc}</span>
+                            </div>
+                            <div class="tutor-info-item">
+                                <i class="fab fa-telegram"></i>
+                                <span class="info-text"><strong>Telegram:</strong> ${tutor.telegram}</span>
+                            </div>
+                        </div>
+
+                        <div class="tutor-card-footer">
+                            <div class="tutor-price-new">
+                                <div class="price-amount-new">${tutor.price} UZS</div>
+                                <div class="price-period-new">soatiga</div>
+                            </div>
+                            <div class="tutor-actions-new">
+                                <button class="btn btn-telegram" data-telegram="${tutor.telegram}">
+                                    <i class="fab fa-telegram"></i> Telegram
+                                </button>
+                                <button class="btn btn-book" data-tutor-id="${tutor.id}">
+                                    <i class="fas fa-calendar-plus"></i> Bron qilish
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                tutorsGrid.appendChild(card);
+            });
+
+            // Yangilangan event listener'lar
+            document.querySelectorAll('.btn-telegram').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const telegram = this.getAttribute('data-telegram');
+                    window.open(`https://t.me/${telegram.substring(1)}`, '_blank');
+                });
+            });
+
+            document.querySelectorAll('.btn-book').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    if (!currentUser) {
+                        openAuthModal('login');
+                        return;
+                    }
+
+                    const tutorId = this.getAttribute('data-tutor-id');
+                    openBookingModal();
+
+                    const tutor = filteredTutors.find(t => t.id == tutorId);
+                    if (tutor) {
+                        document.getElementById('bookingTutor').value = tutor.name;
+                        document.getElementById('bookingSubject').value = tutor.subject;
+                    }
+                });
+            });
+        }
+    }
+}
+
 // Dasturni ishga tushirish
 function init() {
     loadSubjects();
     loadTutors();
     populateFormSelects();
     updateUserUI();
+    setupSearch();
 
     // Event listenerlar
     loginBtn.addEventListener('click', () => openAuthModal('login'));
@@ -545,3 +774,5 @@ function init() {
 
 // DOM yuklanganda dasturni ishga tushirish
 document.addEventListener('DOMContentLoaded', init);
+
+
