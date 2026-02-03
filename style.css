@@ -1575,3 +1575,606 @@ footer {
         font-size: 9px;
     }
 }
+
+/* Qidiruv natijasi uchun styling */
+.no-results {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Qidiruv box animatsiyasi */
+.search-section {
+    transition: all 0.3s ease;
+}
+
+.search-section:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Qidiruvda topilgan elementlarga highlight */
+.subject-card.highlight {
+    border: 2px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+}
+
+.tutor-card.highlight {
+    border: 2px solid var(--accent);
+    box-shadow: 0 10px 30px rgba(26, 188, 156, 0.3);
+}
+
+
+/* ==================== YANGI TUTOR CARD DIZAYNI ==================== */
+
+.tutor-card-new {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tutor-card-new:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
+/* Header qismi */
+.tutor-card-header {
+    padding: 25px 25px 15px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tutor-header-left {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.tutor-avatar-new {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.tutor-avatar-new img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tutor-basic-info {
+    flex: 1;
+}
+
+.tutor-name-new {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.tutor-subject-new {
+    font-size: 15px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 12px;
+    background: rgba(52, 152, 219, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* ==================== YULDUZCHALAR TO'G'RI JOYLASHISHI ==================== */
+
+.tutor-rating-new {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Yangi qo'shilgan: */
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.stars {
+    position: relative;
+    display: inline-flex;
+    font-size: 14px;
+    color: #e0e0e0;
+    /* Yangi qo'shilgan: */
+    white-space: nowrap;
+    line-height: 1;
+    margin-right: 8px;
+}
+
+.stars-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #f39c12;
+    /* Yangi qo'shilgan: */
+    height: 100%;
+}
+
+.rating-number {
+    font-size: 15px;
+    font-weight: 700;
+    color: #f39c12;
+    background: rgba(243, 156, 18, 0.1);
+    padding: 2px 8px;
+    border-radius: 12px;
+    /* Yangi qo'shilgan: */
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/* Qo'shimcha: rating container uchun */
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    margin: 8px 0;
+}
+
+/* Mobil versiyalar uchun */
+@media (max-width: 768px) {
+    .tutor-rating-new {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .stars {
+        font-size: 13px;
+    }
+
+    .rating-number {
+        font-size: 14px;
+        padding: 1px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tutor-rating-new {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .stars {
+        font-size: 12px;
+    }
+
+    .rating-number {
+        font-size: 13px;
+        padding: 1px 5px;
+    }
+}
+/* Body qismi */
+.tutor-card-body {
+    padding: 20px 25px;
+    flex: 1;
+}
+
+.tutor-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.tutor-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.tutor-info-item i {
+    color: var(--primary);
+    font-size: 15px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+}
+
+.tutor-info-item .info-text {
+    flex: 1;
+}
+
+.tutor-info-item strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Footer qismi */
+.tutor-card-footer {
+    padding: 20px 25px;
+    background: #f8fafc;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 0 0 20px 20px;
+}
+
+.tutor-price-new {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.price-amount-new {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.price-period-new {
+    font-size: 13px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.tutor-actions-new {
+    display: flex;
+    gap: 12px;
+}
+
+.tutor-actions-new .btn {
+    flex: 1;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-telegram {
+    background: linear-gradient(135deg, #0088cc 0%, #0077b5 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 136, 204, 0.3);
+}
+
+.btn-telegram:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 136, 204, 0.4);
+    background: linear-gradient(135deg, #0077b5 0%, #006699 100%);
+}
+
+.btn-book {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-book:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+    background: linear-gradient(135deg, var(--primary-dark), #21618c);
+}
+
+/* Responsive dizayn */
+@media (max-width: 768px) {
+    .tutor-header-left {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .tutor-avatar-new {
+        width: 80px;
+        height: 80px;
+    }
+
+    .tutor-subject-new {
+        align-self: center;
+    }
+
+    .tutor-rating-new {
+        justify-content: center;
+    }
+
+    .tutor-card-body {
+        padding: 15px 20px;
+    }
+
+    .tutor-card-footer {
+        padding: 15px 20px;
+    }
+
+    .price-amount-new {
+        font-size: 24px;
+    }
+
+    .tutor-actions-new {
+        flex-direction: column;
+    }
+
+    .tutor-actions-new .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .tutor-card-new {
+        border-radius: 15px;
+    }
+
+    .tutor-card-header {
+        padding: 20px 20px 15px;
+    }
+
+    .tutor-name-new {
+        font-size: 18px;
+    }
+
+    .tutor-avatar-new {
+        width: 70px;
+        height: 70px;
+    }
+
+    .tutor-info-item {
+        font-size: 13px;
+    }
+
+    .price-amount-new {
+        font-size: 22px;
+    }
+
+    .tutor-actions-new .btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+/* ====== RASMDAGI FANLAR DIZAYNI ====== */
+
+#subjectsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 ta ustun */
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.subject-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eef2f7;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.subject-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #4361ee 0%, #3a0ca3 100%);
+    border-radius: 16px 16px 0 0;
+}
+
+.subject-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(67, 97, 238, 0.15);
+    border-color: #4361ee;
+}
+
+.subject-card:hover::before {
+    background: linear-gradient(90deg, #f72585 0%, #3a0ca3 100%);
+}
+
+.subject-card:active {
+    transform: translateY(-4px);
+}
+
+.subject-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #4361ee15 0%, #3a0ca315 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 2px solid #eef2f7;
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover .subject-icon {
+    background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+    border-color: #4361ee;
+    transform: scale(1.05);
+}
+
+.subject-icon i {
+    font-size: 30px;
+    color: #4361ee;
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover .subject-icon i {
+    color: white;
+}
+
+.subject-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    width: 100%;
+}
+
+.subject-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.subject-price {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    background: linear-gradient(90deg, #4361ee 0%, #3a0ca3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+}
+
+.subject-period {
+    font-size: 14px;
+    color: #888;
+    font-weight: 500;
+    background: #f8f9fa;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid #e9ecef;
+}
+
+/* Responsive dizayn */
+@media (max-width: 1200px) {
+    #subjectsGrid {
+        grid-template-columns: repeat(3, 1fr); /* Katta ekranlarda ham 3 ustun */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    #subjectsGrid {
+        grid-template-columns: repeat(2, 1fr); /* O'rtacha ekranlarda 2 ustun */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #subjectsGrid {
+        grid-template-columns: repeat(2, 1fr); /* Kichik ekranlarda 2 ustun */
+        gap: 16px;
+    }
+
+    .subject-card {
+        padding: 20px;
+    }
+
+    .subject-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .subject-icon i {
+        font-size: 26px;
+    }
+
+    .subject-title {
+        font-size: 18px;
+    }
+
+    .subject-price {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 576px) {
+    #subjectsGrid {
+        grid-template-columns: 1fr; /* Juda kichik ekranlarda 1 ustun */
+        gap: 16px;
+    }
+
+    .subject-card {
+        padding: 20px;
+    }
+
+    .subject-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .subject-icon i {
+        font-size: 24px;
+    }
+
+    .subject-title {
+        font-size: 18px;
+    }
+
+    .subject-desc {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .subject-price {
+        font-size: 22px;
+    }
+
+    .subject-period {
+        font-size: 13px;
+        padding: 4px 12px;
+    }
+}
+
+/* Animatsiya */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subject-card {
+    animation: cardAppear 0.5s ease forwards;
+}
+
+.subject-card:nth-child(1) { animation-delay: 0.1s; }
+.subject-card:nth-child(2) { animation-delay: 0.2s; }
+.subject-card:nth-child(3) { animation-delay: 0.3s; }
+.subject-card:nth-child(4) { animation-delay: 0.4s; }
+.subject-card:nth-child(5) { animation-delay: 0.5s; }
+.subject-card:nth-child(6) { animation-delay: 0.6s; }
