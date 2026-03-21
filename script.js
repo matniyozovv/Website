@@ -776,3 +776,34 @@ function init() {
 document.addEventListener('DOMContentLoaded', init);
 
 
+
+const TelegramBot = require('node-telegram-bot-api');
+
+const token = '8661302759:AAHV4xfz43L1JwmWAcboJGHY2vgr-tVS8NI';
+const bot = new TelegramBot(token, { polling: true });
+
+// 👉 O'zingni ID yozasan
+const ADMIN_ID = 7701637395;
+
+// START
+bot.onText(/\/start/, (msg) => {
+  bot.sendMessage(msg.chat.id, "Salom! Xabaringizni yozing 👇");
+});
+
+// USER yozsa → senga keladi
+bot.on('message', (msg) => {
+  if (msg.chat.id !== ADMIN_ID) {
+    bot.sendMessage(ADMIN_ID, `📩 Yangi xabar:\n\n${msg.text}\n\nID: ${msg.chat.id}`);
+  }
+});
+
+// SEN reply qilsang → userga boradi
+bot.on('message', (msg) => {
+  if (msg.chat.id === ADMIN_ID && msg.reply_to_message) {
+    const text = msg.reply_to_message.text;
+
+    const userId = text.split("ID: ")[1];
+
+    bot.sendMessage(userId, msg.text);
+  }
+});
